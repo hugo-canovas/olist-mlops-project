@@ -10,6 +10,7 @@ WORKDIR /app
 COPY --from=builder /install /usr/local
 COPY src/ml_olist/prediction/ ./src/ml_olist/prediction/
 COPY src/ml_olist/common/ ./src/ml_olist/common/
+COPY tests/ ./tests/
 COPY backend/ ./backend/
 ENV PYTHONPATH=/app
 ENV PYTHONUNBUFFERED=1

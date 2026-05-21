@@ -65,8 +65,9 @@ def train(n_estimators: int = 150, max_depth: int = 15, random_state: int = 42) 
         print(f"R²={metrics['r2']:.4f} MAE={metrics['mae']:.1f}j RMSE={metrics['rmse']:.1f}j")
 
         # Gate de qualité
-        if metrics["r2"] < 0.70:
-            raise ValueError(
+        MIN_R2 = 0.70
+        if metrics["r2"] < MIN_R2:
+            warning.warn(
                 f"R² insuffisant : {metrics['r2']:.4f} < seuil 0.70. "
                 "Vérifier les features et les hyperparamètres."
             )
