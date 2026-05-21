@@ -1,4 +1,5 @@
 import os
+import warnings
 from pathlib import Path
 
 import joblib
@@ -67,7 +68,7 @@ def train(n_estimators: int = 150, max_depth: int = 15, random_state: int = 42) 
         # Gate de qualité
         MIN_R2 = 0.70
         if metrics["r2"] < MIN_R2:
-            warning.warn(
+            warnings.warn(
                 f"R² insuffisant : {metrics['r2']:.4f} < seuil 0.70. "
                 "Vérifier les features et les hyperparamètres."
             )
