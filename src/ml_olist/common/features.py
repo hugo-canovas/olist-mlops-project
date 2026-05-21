@@ -1,11 +1,12 @@
 import numpy as np
 import pandas as pd
 
+
 def add_olist_features(df: pd.DataFrame) -> pd.DataFrame:
     """Feature engineering métier Olist.
     Appelé par FunctionTransformer dans le pipeline sklearn.
     DOIT être importable depuis common/ en training ET en production.
-    
+
     Features créées :
         freight_ratio : part du fret dans le coût total de la commande
         log_price : log(1+price) — réduit l'asymétrie de distribution

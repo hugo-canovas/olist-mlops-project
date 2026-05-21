@@ -1,13 +1,16 @@
 from pathlib import Path
 
+
 def test_artifacts_in_gitignore():
     gi = Path(".gitignore").read_text()
     assert "artifacts/" in gi or "*.joblib" in gi
+
 
 def test_data_in_gitignore():
     """les 9 csv olist (120Mo) ne doivent pas aller dans Git."""
     gi = Path(".gitignore").read_text()
     assert "data/" in gi or "*.csv" in gi
+
 
 def test_no_training_code_in_prediction():
     for f in Path("src/ml_olist/prediction").rglob("*.py"):

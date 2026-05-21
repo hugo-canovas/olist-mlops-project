@@ -20,8 +20,8 @@ services:
  # ── Frontend Streamlit ─────────────────────────────────────────
   frontend:
     build:
-    context: .
-    dockerfile: frontend/Dockerfile
+      context: .
+      dockerfile: frontend/Dockerfile
     ports:
       - "8501:8501"
     depends_on:
