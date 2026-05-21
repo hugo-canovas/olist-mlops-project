@@ -14,7 +14,6 @@ services:
       - .env
     environment:
       MINIO_ENDPOINT: http://minio:9000
-      LOCAL_MODEL_PATH: /app/tmp/model_latest.joblib
     volumes:
       - ./artifacts:/app/artifacts:ro
  # ── Frontend Streamlit ─────────────────────────────────────────
