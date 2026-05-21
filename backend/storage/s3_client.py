@@ -12,7 +12,7 @@ def get_s3_client():
         aws_secret_access_key=os.environ.get("MINIO_SECRET_KEY"),
     )
 
-def wait_for_minion(max_retries: int = 10, delay: int = 2):
+def wait_for_minio(max_retries: int = 10, delay: int = 2):
     """Attend que MinIo soit prêt avant de continuer"""
     client = get_s3_client()
     for attempt in range(1, max_retries + 1):
